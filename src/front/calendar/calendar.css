@@ -1,0 +1,92 @@
+.calendar {
+    height: 80vh;    
+    width: 90vw;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .controls {
+    margin: 10px 0;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Conteneur du calendrier */
+  .calendar-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 80%;
+  }
+  
+  /* Header des jours de la semaine */
+  .header {
+    display: grid;
+    grid-template-columns: 100px repeat(7, 1fr);
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  
+  /* Contenu scrollable */
+  .scrollable-grid {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border-top: 1px solid #ccc;
+  }
+  
+  /* Chaque ligne contenant une heure */
+  .row {
+    display: grid;
+    grid-template-columns: 100px repeat(7, 1fr);
+  }
+  
+  /* Heures à gauche */
+  .row-header {
+    background: #ddd;
+    text-align: right;
+    padding: 5px;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+  
+  /* Cellules des heures */
+  .cell {
+    border: 1px solid #ccc;
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  .cell:hover {
+    background: #ddd;
+  }
+  
+  .selected {
+    background: #007bff;
+    color: white;
+  }
+
+  .occupied {
+    background-color: rgba(255, 0, 0, 0.5);
+  }
+  
+  

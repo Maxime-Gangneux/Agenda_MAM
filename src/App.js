@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Calendar from "./front/calendar/calendar.js";
+import Admin from "./front/admin/admin.js";
+import "./App.css";
+
+const pages = { calendar: <Calendar />, admin: <Admin /> };
 
 function App() {
+  const [currentPage, setCurrentPage] = useState("calendar");
+
+  const changepages = (page) => () => {
+    setCurrentPage(page);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={changepages("calendar")}>Calendar</button>
+      <button onClick={changepages("admin")}>Admin</button>
+      {pages[currentPage]}
     </div>
   );
 }
