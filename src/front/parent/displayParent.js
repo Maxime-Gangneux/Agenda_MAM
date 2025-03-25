@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import getParent from '../../back/parent/get.js';
-import Abonnement from '../../back/utils/abonement.js';
 import getParentById from '../../back/parent/getById.js';
 
 const DisplayParent = () => {
@@ -17,8 +16,6 @@ const DisplayParent = () => {
     useEffect(() => {
         fetchParents();
     }, []);
-
-    Abonnement('parents', fetchParents);
 
     return (
         <div>

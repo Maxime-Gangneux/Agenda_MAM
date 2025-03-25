@@ -1,0 +1,207 @@
+.calendar{
+  height: 100vh;
+  width: 87.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topbar{
+  height: 7.5%;
+  width: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls{
+  display: flex;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+}
+
+.aujourdhui{
+  height: 63%;
+  padding-left: 6%;
+  padding-right: 6%;
+  font-size: clamp(10px, 0.75vw, 30px);
+  background-color: transparent;
+  border-radius: 32px;
+  border: 1px solid rgb(82, 82, 82);
+}
+
+.arrows{
+  height: 100%;
+  margin-left: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.◀{
+  height: 1.5vw;
+  width: 1.5vw;
+  padding: 1.5%;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+}
+
+.▶{
+  height: 1.5vw;
+  width: 1.5vw;
+  padding: 1.5%;
+  text-align: center;
+  align-content: center;
+  justify-self: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+}
+
+.▶:hover, .◀:hover{
+  background-color: rgba(160, 160, 160, 0.24);
+}
+
+.calendar-background{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 91.5%;
+  padding-bottom: 1%;
+}
+
+.calendar-container{
+  width: 98%;
+  height: 100%;
+  border-radius: 16px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 15%;
+}
+
+.column-header{
+  width: calc(92.5% / 7);
+  height: 80%;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+}
+
+.column-header > .day{
+  font-size: clamp(10px,  0.8vw, 30px);
+}
+
+.column-header > .date{
+  font-size: clamp(15px,  1.25vw, 40px);
+  text-align: center;
+  align-content: center;
+  width: 2.25vw;
+  height: 2.25vw;
+  border-radius: 50%;
+}
+
+.column-header > .date:hover{
+  background-color: #ddd;
+}
+
+.today-date{
+  background-color: #3f3fff;
+  color: white;
+}
+
+.today-date:hover{
+  background-color: #2525ff !important;
+}
+
+.column-header > .month{
+  font-size: clamp(10px,  0.8vw, 30px);
+}
+
+.empty{
+  width: 7.5%;
+}
+
+.scrolable-grid{
+  display: flex;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 85%;
+  background-color: white;
+}
+
+.hour-container{
+  width: 5%;
+  height: 125vh;
+}
+
+.row-hour{
+  position: relative;
+  height: calc(100% / 24);
+  width: 100%;
+  display: flex;
+}
+
+.row-hour-text{
+  position: absolute;
+  width: 90%;
+  text-align: right;
+  bottom: -15%;
+}
+
+.agenda-body{
+  position: relative;
+  width: 95%;
+  height: 125vh;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(24, 1fr);
+}
+
+.hour-agenda{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.agenda-day{
+  width: calc(100%/7);
+  height: 100%;
+  border: 1px solid #ddd;
+  position: relative;
+  display: flex;
+}
+
+.inner-div {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.agenda-day-colomn {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: calc(100% / 7);
+  height: 100%;
+  top: 0;
+  left: calc((100% / 7) * var(--i));
+}
+
+.horaire{
+  position: relative;
+}
+.occupied {
+  background-color: rgba(255, 0, 0, 0.5);
+}

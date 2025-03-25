@@ -1,0 +1,101 @@
+.signup-background{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-main{
+    height: 50%;
+    width: 25%;
+    border-radius: 8px;
+    padding: 1.5vw;
+    background-color: antiquewhite;
+}
+
+.signup-title-container{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 15%;
+}
+
+.signup-title{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: clamp(20px, 2vw, 50px);
+    text-align: center;
+    align-content: center;
+}
+
+.signup-logo{
+    position: absolute;
+    right: 2.5%;
+    top: 55%;
+    transform: translateY(-50%);
+    height: 80%;
+}
+
+.signup-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+    width: 100%;
+}
+
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+    width: 75%;
+}
+
+.signup-form-section{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    height: calc(90%/5);
+    width: 100%;
+}
+
+.signup-form-label{
+    height: 50%;
+    text-align: left;
+    align-content: center;
+}
+
+.signup-form-input{
+    height: 50%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1.5px solid black ;
+}
+
+.signup-form-button{
+    height: 50%;
+    width: 100%;
+    border-radius: 8px;
+    border: solid 1px black;
+    cursor: pointer;
+}
+
+.signup-form-switch{
+    margin-top: 2%;
+    font-size: clamp(5px, 1vw, 25px);
+    text-wrap: wrap;
+}
+
+.signup-form-switch-button{
+    color: rgb(66, 66, 255);
+    cursor: pointer;
+}
+
+.signup-form-switch-button:hover{
+    text-decoration: underline;
+}

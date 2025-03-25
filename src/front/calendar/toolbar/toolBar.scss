@@ -1,0 +1,104 @@
+.toolbar {
+    position: relative;
+    width: 12.5%;
+    height: 100vh;
+    background-color: rgb(221, 221, 221);
+  }
+  
+  .toolbar button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .toolbar button:hover {
+    background-color: #45a049;
+  }
+  
+  .dropdown-container {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .dropdown-selected {
+    height: 2vw;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 32px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dropdown-selected > div:nth-child(2) {
+    margin-top: 2%;
+    align-content: center;
+    height: 24px;
+  }
+  
+  .dropdown-selected:hover {
+    background-color: rgba(189, 189, 189, 0.322);
+  }
+  
+  .list-enfant {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+  }
+  
+  .child-info-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 2vw;
+    width: 80%;
+    border-radius: 32px;
+  }
+
+  .child-info-container:hover {
+    background-color: rgba(189, 189, 189, 0.322);
+  }
+  
+  .custom-checkbox-label {
+    width: 100%;
+    font-size:clamp(5px, 0.9vw ,18px);
+    cursor: pointer;
+    margin-left: 3vw;
+    color: black;
+  }
+  
+  .custom-checkbox-label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 1vw;
+    height: 1vw;
+    border-radius: 4px;
+    background-color: white;
+    border: 2px solid var(--childcolor); /* Utilise la variable CSS */
+    transition: all 0.3s ease;
+  }
+  
+  .custom-checkbox:checked + .custom-checkbox-label::before {
+    background-color: var(--childcolor);
+    border-color: var(--childcolor);
+    background-image: url("../../../assets/check.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  

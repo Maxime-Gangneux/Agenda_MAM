@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import getChild from '../../back/child/get.js';
-import Abonnement from '../../back/utils/abonement.js';
 import getChildByIdid from '../../back/child/getById.js';
 
 const DisplayChild = () => {
@@ -17,8 +16,6 @@ const DisplayChild = () => {
     useEffect(() => {
         fetchChildren();
     }, []);
-
-    Abonnement('enfants', fetchChildren);
 
     return (
         <div>

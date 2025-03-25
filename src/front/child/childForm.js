@@ -1,49 +1,47 @@
 import React, { useState } from "react";
-import insertparent from "../../back/parent/insert.js";
-import deleteParent from "../../back/parent/delete.js";
+import insertChild from "../../back/child/insert.js";
+import deleteChild from "../../back/child/delete.js";
 
-const ParentForm = () => {
-
+const ChildForm = () => {
     const [formData, setFormData] = useState({
         nom: "",
         prenom: "",
-        email: "",
-        telephone: "",
-        password: "",
+        date_naissance: "",
+        genre: "garçon"
     });
 
-    const [deleteId, setDeleteId] = useState("");  // Ensure deleteId is an empty string initially
+    const [deleteId, setDeleteId] = useState("");
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSupressChange = (e) => {
-        setDeleteId(e.target.value || "");  // Set empty string if undefined
+        setDeleteId(e.target.value);
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await insertparent(formData);
+        
+        await insertChild(formData);
         setFormData({
             nom: "",
             prenom: "",
-            email: "",
-            telephone: "",
-            password: "",
-        }); // Clear form after submit
+            date_naissance: "",
+            genre: "garçon"
+        });
     };
 
-    const handlesupress = async (e) => {
+    const handleSupress = async (e) => {
         e.preventDefault();
         
-        await deleteParent(deleteId);
+        await deleteChild(deleteId);
         setDeleteId("");
     };
 
     return (
         <div>
-            <h2>Ajouter un Parent</h2>
+            <h2>Ajouter un enfant</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Nom :</label>
@@ -56,28 +54,26 @@ const ParentForm = () => {
                 </div>
 
                 <div>
-                    <label>Téléphone :</label>
-                    <input type="tel" name="telephone" value={formData.telephone} onChange={handleChange} required />
+                    <label>Date de naissance :</label>
+                    <input type="date" name="date_naissance" value={formData.date_naissance} onChange={handleChange} required />
                 </div>
 
                 <div>
-                    <label>Email :</label>
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-                </div>
-
-                <div>
-                    <label>Téléphone :</label>
-                    <input type="tel" name="telephone" value={formData.telephone} onChange={handleChange} required />
+                    <label>Genre :</label>
+                    <select name="genre" value={formData.genre} onChange={handleChange}>
+                        <option value="garçon">Garçon</option>
+                        <option value="fille">Fille</option>
+                        <option value="autre">Autre</option>
+                    </select>
                 </div>
 
                 <button type="submit">Ajouter</button>
             </form>
 
-            <h2>Supprimer un Parent</h2>
-
-            <form onSubmit={handlesupress}>
+            <h2>Supprimer un enfant</h2>
+            <form onSubmit={handleSupress}>
                 <div>
-                    <label>Id :</label>
+                    <label>ID :</label>
                     <input type="number" name="id" value={deleteId} onChange={handleSupressChange} required />
                 </div>
 
@@ -87,4 +83,4 @@ const ParentForm = () => {
     );
 };
 
-export default ParentForm;
+export default ChildForm;

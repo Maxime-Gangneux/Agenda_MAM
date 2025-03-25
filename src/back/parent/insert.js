@@ -7,7 +7,9 @@ async function insertparent(infos) {
             {   nom: infos.nom ? infos.nom : "",
                 prenom: infos.prenom ? infos.prenom : "",
                 email: infos.email ? infos.email : "",
-                telephone: infos.telephone ? infos.telephone : ""}
+                telephone: infos.telephone ? infos.telephone : "",
+                password: infos.password ? infos.password : "",
+            }
         ]);
 
     if (error) console.error('Erreur:', error);
