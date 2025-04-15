@@ -10,7 +10,7 @@ const AbonnementParents = ({onUpdate}) => {
       
         const subscription = supabase
           .channel('realtime_parents')
-          .on('postgres_changes', { event: '*', schema: 'public', table: 'parents' }, handleUpdate)
+          .on('postgres_changes', { event: '*', schema: 'public', table: 'users' }, handleUpdate)
           .subscribe();
       
         console.log("Abonnement réussi à la table parents");

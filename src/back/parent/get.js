@@ -2,8 +2,9 @@ import supabase from '../utils/connexion.js';
 
 async function getParent() {
     const { data, error } = await supabase
-        .from('parents')
-        .select("*");
+        .from('users')
+        .select("*")
+        .eq("role", "parent")
 
     if (error) {
         console.error('Erreur:', error);

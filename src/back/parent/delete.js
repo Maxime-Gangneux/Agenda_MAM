@@ -2,7 +2,7 @@ import supabase from '../utils/connexion.js';
 
 async function deleteParent(id) {
     const {error } = await supabase
-        .from('parents')
+        .from('users')
         .delete()
         .eq("id", id);
 

@@ -1,0 +1,30 @@
+.child-background {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+}
+
+.child-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 95vw;
+    padding: 20px;
+    border-radius: 1vw;
+
+}
+
+.child-form-background{
+    position:  absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.356);
+    z-index: 2;
+}

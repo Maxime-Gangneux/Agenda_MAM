@@ -3,12 +3,12 @@ import "./connexionMain.css";
 import LoginForm from "./login/loginForm";
 import SignupForm from "./signin/signupForm";
 
-const ConnexionMain = ({checkToken}) => {
+const ConnexionMain = ({loginSuccess}) => {
     const [currentConnexion, setcurrentConnexion] = useState("LoginForm");
 
     const pages = {
-        LoginForm: <LoginForm setcurrentConnexion={setcurrentConnexion} checkToken={checkToken} />,
-        SignupForm: <SignupForm setcurrentConnexion={setcurrentConnexion} checkToken={checkToken} />
+        LoginForm: <LoginForm setcurrentConnexion={setcurrentConnexion} loginSuccess={loginSuccess} />,
+        SignupForm: <SignupForm setcurrentConnexion={setcurrentConnexion} loginSuccess={loginSuccess} />
     };
 
     return (

@@ -1,55 +1,82 @@
 import React, { useEffect, useState } from 'react';
-import getParent from '../../back/parent/get.js';
-import getParentById from '../../back/parent/getById.js';
+import getParents from '../../back/parent/get.js';
+import deleteParent from '../../back/parent/delete.js';
+import edit from '../../assets/edit.svg';
+import delete_button from '../../assets/delete.svg';
+import fleche_gauche from "../../assets/keyboard_arrow_left_white.svg";
+import AbonnementParents from "../../back/utils/abonnements/abonement_parents.js"
+import "./displayParent.css";
 
-const DisplayParent = () => {
+const DisplayParent = ({setmodalupdateParentisopen, setParentId }) => {
     const [parents, setParents] = useState([]);
-    const [parentById, setParentbyid] = useState([]);
 
     const fetchParents = async () => {
-        const data = await getParent();
-        const databyid = await getParentById(4);
-        setParentbyid(JSON.stringify(databyid));
+        const data = await getParents();
         setParents(data);
-      };
+    };
 
     useEffect(() => {
         fetchParents();
     }, []);
 
-    return (
-        <div>
-        <h2>Liste des Parents</h2>
-        <table border="1">
-            <thead>
-            <tr>
-                <th>id</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>e-mail</th>
-                <th>telephone</th>
-            </tr>
-            </thead>
-            <tbody>
-            {parents.length > 0 ? (
-                parents.map((parent) => (
-                <tr key={parent.id}>
-                    <td>{parent.id}</td>
-                    <td>{parent.nom}</td>
-                    <td>{parent.prenom}</td>
-                    <td>{parent.email}</td>
-                    <td>{parent.telephone}</td>
-                </tr>
-                ))
-            ) : (
-                <tr>
-                <td colSpan="4">Aucun parent trouvé.</td>
-                </tr>
-            )}
-            </tbody>
-        </table>
+    const handleDelete = async (id) => {
+        await deleteParent(id);
+        fetchParents();
+    };
 
-        <p>data by id {parentById}</p>
+    return (
+        <div className="parent-display-container">
+            <div className="parent-list-title">
+                <button className="back-to-calendar" onClick={() => { window.location.hash = "calendar"; }}>
+                    <img src={fleche_gauche} alt="Retour" />
+                </button>
+                <h2>Liste des Parents</h2>
+            </div>
+
+            <div className="parent-table-container">
+                <table className="parent-table">
+                    <thead>
+                        <tr className="table-header">
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Email</th>
+                            <th>Téléphone</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {parents.length > 0 ? (
+                            parents.map((parent) => (
+                                <tr key={parent.id} className="table-row">
+                                    <td>{parent.last_name}</td>
+                                    <td>{parent.first_name}</td>
+                                    <td>{parent.email}</td>
+                                    <td>{parent.telephone}</td>
+                                    <td>
+                                        <div className="table-actions">
+                                            <button className="table-action-edit-btn" 
+                                                onClick={async () => {
+                                                    await setParentId(parent.id);
+                                                    setmodalupdateParentisopen(true);
+                                                }}>
+                                                <img src={edit} alt="Modifier" />
+                                            </button>
+                                            <button className="table-action-delete-btn" onClick={() => handleDelete(parent.id)}>
+                                                <img src={delete_button} alt="Supprimer" />
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan="5">Aucun parent trouvé.</td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
+            </div>
+            <AbonnementParents onUpdate = {fetchParents}/>
         </div>
     );
 };

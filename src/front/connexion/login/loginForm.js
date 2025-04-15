@@ -3,7 +3,7 @@ import login from "../../../back/connexion/login.js"; // Assurez-vous que le che
 import "./login.css";
 import logo from "../../../assets/logo mam.png";
 
-const LoginForm = ({ setcurrentConnexion, checkToken }) => {
+const LoginForm = ({ setcurrentConnexion, loginSuccess }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
@@ -18,9 +18,9 @@ const LoginForm = ({ setcurrentConnexion, checkToken }) => {
         if (result.error) {
             setMessage(`❌ Erreur : ${result.error}`); // Affiche le message d'erreur
         } else if (result.success) {
+            localStorage.setItem("userInfo", JSON.stringify(result.user));
             setMessage("✅ Connexion réussie !");
-            localStorage.setItem("supabase_token", result.token); // Stocke le token dans localStorage
-            checkToken();
+            loginSuccess();
         }
 
         setTimeout(() => setMessage(""), 3000); // Efface le message après 3 secondes
