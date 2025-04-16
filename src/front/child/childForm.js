@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import insertChild from "../../back/child/insert.js";
 import "./childForm.css";
 
-const ChildForm = ({setmodalcreateChildisopen}) => {
+const ChildForm = ({setmodalcreateChildisopen, user}) => {
     const [formData, setFormData] = useState({
         nom: "",
         prenom: "",
@@ -16,7 +16,7 @@ const ChildForm = ({setmodalcreateChildisopen}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await insertChild(formData);
+        await insertChild(formData, user.id);
         setmodalcreateChildisopen(false)
         setFormData({
             nom: "",

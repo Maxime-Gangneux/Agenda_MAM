@@ -3,7 +3,7 @@ import Calendar from "./calendarComponent/calendar";
 import ToolBar from "./toolbar/toolBar";
 import "./calendarMain.css"
 
-function CalendarMain({changePages, checkToken, userRole}){
+function CalendarMain({changePages, checkToken, user}){
     const [checkboxState, setCheckboxState] = useState(() => {
         const savedState = JSON.parse(localStorage.getItem("checkboxstate"));
         return savedState || {};
@@ -12,8 +12,8 @@ function CalendarMain({changePages, checkToken, userRole}){
 
     return(
         <div className="main-calendar-container">
-            <ToolBar changePages={changePages} checkboxState = {checkboxState} setCheckboxState = {setCheckboxState} userRole = {userRole} />
-            <Calendar checkboxState = {checkboxState} setCheckboxState = {setCheckboxState} checkToken={checkToken} userRole = {userRole}/>
+            <ToolBar changePages={changePages} checkboxState = {checkboxState} setCheckboxState = {setCheckboxState} user = {user} />
+            <Calendar checkboxState = {checkboxState} setCheckboxState = {setCheckboxState} checkToken={checkToken} user = {user}/>
         </div>
     )
 }

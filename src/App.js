@@ -9,11 +9,11 @@ import "./App.css";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("ConnexionMain");
-  const [userRole, setUserRole] = useState(() => {
+  const [user, setUser] = useState(() => {
     const userInfo = localStorage.getItem("userInfo");
     if (userInfo) {
         const user = JSON.parse(userInfo);
-        return user.role;
+        return user;
     }
     return "";
 });
@@ -34,9 +34,9 @@ function App() {
     if (!userinfos) return;
   
     const user = JSON.parse(userinfos);
-    setUserRole(user.role);
+    setUser(user);
 
-    if (userRole === "parent" && !user.is_verified) {
+    if (user.role === "parent" && !user.is_verified) {
       targetPage = "verifyPage";
     }
   
@@ -82,10 +82,10 @@ function App() {
   }
 
   const pages = {
-    calendar: <CalendarMain checkToken={checkToken} userRole = {userRole} />,
+    calendar: <CalendarMain checkToken={checkToken} user = {user} />,
     admin: <Admin/>,
     login: <ConnexionMain loginSuccess={loginSuccess} />,
-    ChildMain: <ChildMain />,
+    ChildMain: <ChildMain user = {user} />,
     ParentMain: <ParentMain />,
     verifyPage: <VerifyPage />,
   };

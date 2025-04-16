@@ -2,19 +2,25 @@ import React, { useEffect, useState } from 'react';
 import AbonnementEnfants from "../../back/utils/abonnements/abonement_enfant.js";
 import deleteChild from "../../back/child/delete.js";
 import getChild from '../../back/child/get.js';
+import getChildren from '../../back/parent/getChildren.js';
 import edit from '../../assets/edit.svg';
 import delete_button from '../../assets/delete.svg';
 import add from "../../assets/add.svg";
 import fleche_gauche from "../../assets/keyboard_arrow_left_white.svg"
 import "./displayChild.css";
 
-const DisplayChild = ({ setmodalcreateChildisopen, setmodalupdateChildisopen, setchildId }) => {
+const DisplayChild = ({ setmodalcreateChildisopen, setmodalupdateChildisopen, setchildId, user }) => {
     const [children, setChildren] = useState([]);
 
-    const fetchChildren = async () => {
+    const fetchChildren = user.role === "parent"
+    ? async () => {
+        const data = await getChildren(user.id);
+        setChildren(data);
+        }
+    : async () => {
         const data = await getChild();
         setChildren(data);
-    };
+        };
 
     useEffect(() => {
         fetchChildren();
@@ -29,7 +35,7 @@ const DisplayChild = ({ setmodalcreateChildisopen, setmodalupdateChildisopen, se
         <div className="child-display-container">
             <div className="child-list-title">
                 <button className="back-to-calendar" onClick={() => { window.location.hash = "calendar"; }}><img src={fleche_gauche} alt="Retour" /></button>
-                <h2>Liste des Enfants</h2>
+                <h2>{user.role === "parent" ? ("Mes Enfants"):("Liste des Enfants")}</h2>
                 <button className="add-button" onClick={() => setmodalcreateChildisopen(true)}>
                     <img src={add} alt="Ajouter" />
                 </button>

@@ -4,7 +4,7 @@ import EditChildForm from "./editChildForm";
 import React, { useState } from "react";
 import "./ChildMain.css";
 
-const ChildMain = ({ changePages }) => {
+const ChildMain = ({ user }) => {
     const [modalcreateChildisopen, setmodalcreateChildisopen] = useState(false);
     const [modalupdateChildisopen, setmodalupdateChildisopen] = useState(false);
     const [childId, setchildId] = useState(null);
@@ -14,7 +14,7 @@ const ChildMain = ({ changePages }) => {
             <div className="child-main">
                 {modalcreateChildisopen && (
                     <div className="child-form" >
-                        <ChildForm setmodalcreateChildisopen = {setmodalcreateChildisopen}/>
+                        <ChildForm setmodalcreateChildisopen = {setmodalcreateChildisopen} user = {user}/>
                         <div className="child-form-background" onClick={() => {setmodalcreateChildisopen(false)}}></div>
                     </div>
                 )}
@@ -24,7 +24,7 @@ const ChildMain = ({ changePages }) => {
                         <div className="child-form-background" onClick={() => {setmodalupdateChildisopen(false)}}></div>
                     </div>
                 )}
-                <DisplayChild setmodalcreateChildisopen={setmodalcreateChildisopen} setmodalupdateChildisopen = {setmodalupdateChildisopen} setchildId = {setchildId}/>
+                <DisplayChild setmodalcreateChildisopen={setmodalcreateChildisopen} setmodalupdateChildisopen = {setmodalupdateChildisopen} setchildId = {setchildId} user = {user}/>
             </div>
         </div>
     );
