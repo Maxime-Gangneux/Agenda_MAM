@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Agenda_MAM/static/css/main.7bfa14c1.css",
-    "main.js": "/Agenda_MAM/static/js/main.ffb61139.js",
+    "main.css": "/Agenda_MAM/static/css/main.3fe32cfe.css",
+    "main.js": "/Agenda_MAM/static/js/main.9dc5fc10.js",
     "static/js/952.d417e8fd.chunk.js": "/Agenda_MAM/static/js/952.d417e8fd.chunk.js",
     "static/js/453.756a1453.chunk.js": "/Agenda_MAM/static/js/453.756a1453.chunk.js",
     "static/media/logo mam.png": "/Agenda_MAM/static/media/logo mam.7bd31eed799c4e2fd82a.png",
@@ -11,18 +11,22 @@
     "static/media/edit.svg": "/Agenda_MAM/static/media/edit.c65aac74a59c835b9c29d23eb94baff2.svg",
     "static/media/delete.svg": "/Agenda_MAM/static/media/delete.66d3958d6b48a544d1bea3644f8db8fb.svg",
     "static/media/logout.svg": "/Agenda_MAM/static/media/logout.00ddec57a7515d4885f83e12e0a1aa3d.svg",
+    "static/media/close_black.svg": "/Agenda_MAM/static/media/close_black.30508a6d00696f2dc5c6347d3462a2ee.svg",
     "static/media/add.svg": "/Agenda_MAM/static/media/add.1ab8da4635ac355d28c30c8811fa1bf6.svg",
+    "static/media/plus.svg": "/Agenda_MAM/static/media/plus.db8059549b1bd98b424237d048d5e7c3.svg",
     "static/media/keyboard_arrow_up.svg": "/Agenda_MAM/static/media/keyboard_arrow_up.20691a5ad2eecfbdd3bffc5d07d25b2b.svg",
-    "static/media/check.svg": "/Agenda_MAM/static/media/check.fa87db00e007c0c9447d.svg",
+    "static/media/check.svg": "/Agenda_MAM/static/media/check.14ef6b5f03f1276e855936235c6b5d58.svg",
     "static/media/keyboard_arrow_down.svg": "/Agenda_MAM/static/media/keyboard_arrow_down.0940d7c0d874fa0e7364127357d2dec0.svg",
+    "static/media/keyboard_arrow_left.svg": "/Agenda_MAM/static/media/keyboard_arrow_left.a8c07754e76fb22010828d2648135e1d.svg",
     "static/media/keyboard_arrow_left_white.svg": "/Agenda_MAM/static/media/keyboard_arrow_left_white.e234b5361844885979ae11480de5ed6f.svg",
-    "main.7bfa14c1.css.map": "/Agenda_MAM/static/css/main.7bfa14c1.css.map",
-    "main.ffb61139.js.map": "/Agenda_MAM/static/js/main.ffb61139.js.map",
+    "static/media/keyboard_arrow_right.svg": "/Agenda_MAM/static/media/keyboard_arrow_right.5248d16806a8a574dede33b460847cd9.svg",
+    "main.3fe32cfe.css.map": "/Agenda_MAM/static/css/main.3fe32cfe.css.map",
+    "main.9dc5fc10.js.map": "/Agenda_MAM/static/js/main.9dc5fc10.js.map",
     "952.d417e8fd.chunk.js.map": "/Agenda_MAM/static/js/952.d417e8fd.chunk.js.map",
     "453.756a1453.chunk.js.map": "/Agenda_MAM/static/js/453.756a1453.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7bfa14c1.css",
-    "static/js/main.ffb61139.js"
+    "static/css/main.3fe32cfe.css",
+    "static/js/main.9dc5fc10.js"
   ]
 }
