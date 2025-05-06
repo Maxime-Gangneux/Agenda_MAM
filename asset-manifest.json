@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Agenda_MAM/static/css/main.3fe32cfe.css",
-    "main.js": "/Agenda_MAM/static/js/main.9dc5fc10.js",
+    "main.css": "/Agenda_MAM/static/css/main.29fd3904.css",
+    "main.js": "/Agenda_MAM/static/js/main.b5f8d78a.js",
     "static/js/952.d417e8fd.chunk.js": "/Agenda_MAM/static/js/952.d417e8fd.chunk.js",
     "static/js/453.756a1453.chunk.js": "/Agenda_MAM/static/js/453.756a1453.chunk.js",
     "static/media/logo mam.png": "/Agenda_MAM/static/media/logo mam.7bd31eed799c4e2fd82a.png",
@@ -20,13 +20,13 @@
     "static/media/keyboard_arrow_left.svg": "/Agenda_MAM/static/media/keyboard_arrow_left.a8c07754e76fb22010828d2648135e1d.svg",
     "static/media/keyboard_arrow_left_white.svg": "/Agenda_MAM/static/media/keyboard_arrow_left_white.e234b5361844885979ae11480de5ed6f.svg",
     "static/media/keyboard_arrow_right.svg": "/Agenda_MAM/static/media/keyboard_arrow_right.5248d16806a8a574dede33b460847cd9.svg",
-    "main.3fe32cfe.css.map": "/Agenda_MAM/static/css/main.3fe32cfe.css.map",
-    "main.9dc5fc10.js.map": "/Agenda_MAM/static/js/main.9dc5fc10.js.map",
+    "main.29fd3904.css.map": "/Agenda_MAM/static/css/main.29fd3904.css.map",
+    "main.b5f8d78a.js.map": "/Agenda_MAM/static/js/main.b5f8d78a.js.map",
     "952.d417e8fd.chunk.js.map": "/Agenda_MAM/static/js/952.d417e8fd.chunk.js.map",
     "453.756a1453.chunk.js.map": "/Agenda_MAM/static/js/453.756a1453.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fe32cfe.css",
-    "static/js/main.9dc5fc10.js"
+    "static/css/main.29fd3904.css",
+    "static/js/main.b5f8d78a.js"
   ]
 }
