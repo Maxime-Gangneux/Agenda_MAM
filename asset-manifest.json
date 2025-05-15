@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Agenda_MAM/static/css/main.f26771c0.css",
-    "main.js": "/Agenda_MAM/static/js/main.5c280ed4.js",
+    "main.js": "/Agenda_MAM/static/js/main.26739552.js",
     "static/js/952.d417e8fd.chunk.js": "/Agenda_MAM/static/js/952.d417e8fd.chunk.js",
     "static/js/453.756a1453.chunk.js": "/Agenda_MAM/static/js/453.756a1453.chunk.js",
     "static/media/logo mam.png": "/Agenda_MAM/static/media/logo mam.7bd31eed799c4e2fd82a.png",
@@ -22,12 +22,12 @@
     "static/media/keyboard_arrow_left_white.svg": "/Agenda_MAM/static/media/keyboard_arrow_left_white.e234b5361844885979ae11480de5ed6f.svg",
     "static/media/keyboard_arrow_right.svg": "/Agenda_MAM/static/media/keyboard_arrow_right.5248d16806a8a574dede33b460847cd9.svg",
     "main.f26771c0.css.map": "/Agenda_MAM/static/css/main.f26771c0.css.map",
-    "main.5c280ed4.js.map": "/Agenda_MAM/static/js/main.5c280ed4.js.map",
+    "main.26739552.js.map": "/Agenda_MAM/static/js/main.26739552.js.map",
     "952.d417e8fd.chunk.js.map": "/Agenda_MAM/static/js/952.d417e8fd.chunk.js.map",
     "453.756a1453.chunk.js.map": "/Agenda_MAM/static/js/453.756a1453.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f26771c0.css",
-    "static/js/main.5c280ed4.js"
+    "static/js/main.26739552.js"
   ]
 }
