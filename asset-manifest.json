@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/Agenda_MAM/static/css/main.29fd3904.css",
-    "main.js": "/Agenda_MAM/static/js/main.b5f8d78a.js",
+    "main.css": "/Agenda_MAM/static/css/main.f26771c0.css",
+    "main.js": "/Agenda_MAM/static/js/main.662dbef1.js",
     "static/js/952.d417e8fd.chunk.js": "/Agenda_MAM/static/js/952.d417e8fd.chunk.js",
     "static/js/453.756a1453.chunk.js": "/Agenda_MAM/static/js/453.756a1453.chunk.js",
     "static/media/logo mam.png": "/Agenda_MAM/static/media/logo mam.7bd31eed799c4e2fd82a.png",
     "static/media/settings.svg": "/Agenda_MAM/static/media/settings.73aa0a340fa828ab6c565dd41820d899.svg",
     "static/media/account_circle.svg": "/Agenda_MAM/static/media/account_circle.c529752e022aee307d11b5ad272027ec.svg",
     "index.html": "/Agenda_MAM/index.html",
+    "static/media/help.svg": "/Agenda_MAM/static/media/help.0c00a10cd6ef0cd74e25163e38374115.svg",
     "static/media/edit.svg": "/Agenda_MAM/static/media/edit.c65aac74a59c835b9c29d23eb94baff2.svg",
     "static/media/delete.svg": "/Agenda_MAM/static/media/delete.66d3958d6b48a544d1bea3644f8db8fb.svg",
     "static/media/logout.svg": "/Agenda_MAM/static/media/logout.00ddec57a7515d4885f83e12e0a1aa3d.svg",
@@ -20,13 +21,13 @@
     "static/media/keyboard_arrow_left.svg": "/Agenda_MAM/static/media/keyboard_arrow_left.a8c07754e76fb22010828d2648135e1d.svg",
     "static/media/keyboard_arrow_left_white.svg": "/Agenda_MAM/static/media/keyboard_arrow_left_white.e234b5361844885979ae11480de5ed6f.svg",
     "static/media/keyboard_arrow_right.svg": "/Agenda_MAM/static/media/keyboard_arrow_right.5248d16806a8a574dede33b460847cd9.svg",
-    "main.29fd3904.css.map": "/Agenda_MAM/static/css/main.29fd3904.css.map",
-    "main.b5f8d78a.js.map": "/Agenda_MAM/static/js/main.b5f8d78a.js.map",
+    "main.f26771c0.css.map": "/Agenda_MAM/static/css/main.f26771c0.css.map",
+    "main.662dbef1.js.map": "/Agenda_MAM/static/js/main.662dbef1.js.map",
     "952.d417e8fd.chunk.js.map": "/Agenda_MAM/static/js/952.d417e8fd.chunk.js.map",
     "453.756a1453.chunk.js.map": "/Agenda_MAM/static/js/453.756a1453.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.29fd3904.css",
-    "static/js/main.b5f8d78a.js"
+    "static/css/main.f26771c0.css",
+    "static/js/main.662dbef1.js"
   ]
 }
