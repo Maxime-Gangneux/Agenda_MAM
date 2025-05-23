@@ -50,7 +50,8 @@ function App() {
     window.addEventListener("storage", checkToken); // Réécoute le changement du token dans le localStorage
 
     // Initialisation de la page basée sur le hash actuel
-    const initialPage = window.location.hash.slice(1) || "ConnexionMain";
+    const initialPage = window.location.hash.slice(1) || "login";
+    window.location.hash = window.location.hash.slice(1) || "login";
     setCurrentPage(initialPage);
 
     // Écouteur pour les changements de hash dans l'URL
@@ -83,7 +84,6 @@ function App() {
 
   const pages = {
     calendar: <CalendarMain checkToken={checkToken} user = {user} />,
-    admin: <Admin/>,
     login: <ConnexionMain loginSuccess={loginSuccess} />,
     ChildMain: <ChildMain user = {user} />,
     ParentMain: <ParentMain />,

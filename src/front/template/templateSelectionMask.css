@@ -1,0 +1,48 @@
+.mask-container {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    cursor: pointer;
+  }
+  
+  .mask-day-container {
+    position: absolute;
+    display: flex;
+    bottom: 1.9%;
+    left: 22%;
+    width: 76.5%;
+    height: 77.5%;
+    background: transparent;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.85);
+    pointer-events: auto; /* Active les clics ici */
+    z-index: 101;
+  }
+  
+  .mask-day {
+    flex-grow: 1;
+    z-index: 102;
+    cursor: pointer;
+  }
+  
+  .mask-day:hover {
+    background-color: #00000025;
+  }
+  
+  .instruction {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    font-size: 2vw;
+    transform: translateX(-30%);
+    color: white;
+    z-index: 999;
+  }
+  
+  @media (max-width: 768px) {
+    .mask-day-container{
+      width: 91%;
+      height: 78%;
+      left: 8.5%;
+      bottom: 0.75%;
+    }
+  }

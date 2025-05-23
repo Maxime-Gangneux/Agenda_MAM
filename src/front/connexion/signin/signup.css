@@ -99,3 +99,12 @@
 .signup-form-switch-button:hover{
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    .signup-main{
+        width: 100%;
+    }
+    .signup-form-switch{
+        font-size: 3vw;
+    }
+  }

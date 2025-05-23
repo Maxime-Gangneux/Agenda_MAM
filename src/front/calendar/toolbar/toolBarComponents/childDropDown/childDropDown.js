@@ -80,8 +80,8 @@ function ChildDropDown({ checkboxState, setCheckboxState, user }) {
 
   return (
     <div className="dropdown-container">
-      <div className="dropdown-selected" onClick={handleDropdownToggle}>
-        <div style={{ fontSize: "clamp(5px, 0.9vw ,18px)", whiteSpace: "nowrap" }}>
+      <div className="dropdown-selected" onClick={handleDropdownToggle} style={{left:"3%", position:"relative"}}>
+        <div className="drop-down-title" style={{whiteSpace: "nowrap" }}>
           Couleur des enfants
         </div>
         <div>{isDropdownOpen ? <ArrowUp /> : <ArrowDown />}</div>

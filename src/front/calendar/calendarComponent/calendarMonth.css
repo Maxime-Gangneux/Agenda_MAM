@@ -1,0 +1,99 @@
+.calendarMonthContainer{
+  position: relative;
+  margin-top: 5% !important;
+  left: 2.5%;
+    width: 90%;
+    margin: auto;
+    background-color: #fff;
+    padding: 2.5%;
+    border-radius: 16px;
+}
+
+.calendarMonthToolBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.calendarMonthToolBar > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2vw !important;
+    height: 2vw !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    margin: 0 !important; 
+    background-color: transparent !important;
+    overflow: hidden;
+    position: relative;
+}
+
+.calendarMonthToolBar > button:hover {
+    background-color: #CECECE !important;
+}
+
+.calendarMonthToolBar > button > img {
+    width: 2vw;
+    height: 2vw;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.calendarMonth {
+    padding: 2.5%;
+  }
+  
+  .calendar-header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2.5%;
+  }
+  
+  .calendar-day {
+    border-bottom: 1px solid #ccc;
+    aspect-ratio: 1/1;
+    align-content: center;
+    font-size: 1vw;
+  }
+  
+  .calendar-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .calendar-cell {
+    aspect-ratio: 1 / 1;
+    background: #DDDDDD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    font-size: 1vw;
+  }
+
+  .calendar-cell:hover{
+    background-color: #aaaaaa;
+  }
+  
+  .inCurrentWeek{
+    background-color: #aaaaaa;
+  }
+
+  .today1{
+    background-color: #3F3FFF;
+    color: #fff;
+  }
+
+  .today1:hover{
+    background-color: #2525FF;
+    color: #fff;
+  }
+  

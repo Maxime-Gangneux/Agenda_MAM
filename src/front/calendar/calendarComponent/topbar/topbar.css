@@ -1,19 +1,19 @@
-.topbar{
+.topbar {
     height: 7.5%;
     width: 98%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
+}
 
-.controls{
+.controls {
     display: flex;
     align-items: center;
     width: 25%;
     height: 100%;
 }
 
-.aujourdhui{
+.aujourdhui {
     height: 63%;
     padding-left: 6%;
     padding-right: 6%;
@@ -21,16 +21,19 @@
     background-color: transparent;
     border-radius: 32px;
     border: 1px solid rgb(82, 82, 82);
+    color: rgb(82, 82, 82);
 }
 
-.arrows{
+.arrows {
     height: 100%;
     margin-left: 10%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.prev-week{
+.prev-week,
+.next-week {
     height: 1.5vw;
     width: 1.5vw;
     padding: 1.5%;
@@ -39,23 +42,17 @@
     border-radius: 50%;
 }
 
-.next-week{
-    height: 1.5vw;
-    width: 1.5vw;
-    padding: 1.5%;
-    text-align: center;
-    align-content: center;
-    justify-self: center;
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-}
-
-.next-week:hover, .prev-week:hover{
+.next-week:hover,
+.prev-week:hover {
     background-color: rgba(160, 160, 160, 0.24);
 }
 
-.profile {
+.toolbarbutton {
+    display: none;
+}
+
+.profile,
+.help {
     position: relative;
     display: flex;
     align-items: center;
@@ -75,6 +72,14 @@
     transition: transform 0.2s ease-in-out;
 }
 
+.menus {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    height: 100%;
+}
+
+/* Menu déroulant partagé */
 .profile-menu {
     position: absolute;
     right: 0;
@@ -82,7 +87,7 @@
     background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    min-width: 150px;
+    min-width: 200px;
     z-index: 999;
     display: flex;
     flex-direction: column;
@@ -90,32 +95,27 @@
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-    pointer-events: none; /* Désactive les interactions quand le menu est caché */
+    pointer-events: none;
 }
 
 .profile-menu.show {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: auto; /* Réactive les interactions quand le menu est visible */
+    pointer-events: auto;
 }
 
 .profile-menu .profile-action {
-    padding: 10px 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
     font-size: 14px;
     color: #333;
-    cursor: pointer;
     transition: background 0.2s ease-in-out;
 }
 
 .profile-menu .profile-action:hover {
     background: rgba(0, 0, 0, 0.1);
-}
-
-.profile-action {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
 }
 
 .profile-action img {
@@ -124,3 +124,85 @@
     margin-right: 10px;
 }
 
+/* Section complète pour les titres + paragraphes (menu aide) */
+.profile-section {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-section:last-child {
+    border-bottom: none;
+}
+
+.profile-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.profile-description {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .controls {
+        width: 80%;
+    }
+
+    .aujourdhui {
+        width: 35%;
+        height: 60%;
+    }
+
+    .arrows {
+        width: 35%;
+        height: 60%;
+    }
+
+    .prev-week,
+    .next-week {
+        width: 25%;
+        height: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile,
+    .help {
+        height: 50%;
+        aspect-ratio: 1/1;
+    }
+
+    .profile-drop-down {
+        height: 100%;
+        width: 100%;
+    }
+
+    .profile-image {
+        height: 100%;
+        width: 100%;
+    }
+
+    .toolbarbutton {
+        height: 60%;
+        width: 20%;
+        margin-right: 5%;
+        font-size: clamp(10px, 0.75vw, 30px);
+        background-color: transparent;
+        border-radius: 32px;
+        border: 1px solid rgb(82, 82, 82);
+        display: block;
+        color: rgb(82, 82, 82);
+        text-align: center;
+    }
+
+    .menus {
+        gap: 3vw;
+    }
+}

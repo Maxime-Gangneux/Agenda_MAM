@@ -27,9 +27,12 @@ const DisplayChild = ({ setmodalcreateChildisopen, setmodalupdateChildisopen, se
     }, []);
 
     const handleDelete = async (id) => {
-        await deleteChild(id);
-        fetchChildren(); // Rafraîchir la liste après suppression
+        if (window.confirm("Es-tu sûr de vouloir le surpimer ?")) {
+            await deleteChild(id);
+            fetchChildren();
+        }
     };
+    
 
     return (
         <div className="child-display-container">
@@ -47,7 +50,7 @@ const DisplayChild = ({ setmodalcreateChildisopen, setmodalupdateChildisopen, se
                         <tr className="table-header">
                             <th>Nom</th>
                             <th>Prénom</th>
-                            <th>Date de naissance</th>
+                            <th>naissance</th>
                             <th>Genre</th>
                             <th>Action</th>
                         </tr>

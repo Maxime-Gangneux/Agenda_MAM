@@ -38,8 +38,6 @@ async function insertChild(infos, id_parent) {
         console.error("Erreur lors de l'association parent/enfant :", relError);
         return;
     }
-
-    console.log('Ajout réussi:', data);
 }
 
 export default insertChild;

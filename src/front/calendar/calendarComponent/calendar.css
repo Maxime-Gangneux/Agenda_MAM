@@ -100,6 +100,7 @@
   width: 90%;
   text-align: right;
   bottom: -15%;
+  font-size: 1vw;
 }
 
 .agenda-body{
@@ -124,6 +125,8 @@
   border: 1px solid #ddd;
   position: relative;
   display: flex;
+  z-index: 10;
+  cursor: pointer;
 }
 
 .inner-div {
@@ -144,7 +147,82 @@
 
 .horaire{
   position: relative;
+  z-index: 12;
 }
 .occupied {
   background-color: rgba(255, 0, 0, 0.5);
+}
+
+.tooltip {
+  position: fixed;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  z-index: 1000;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.tooltip-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.close-btn,
+.delete-btn {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s ease;
+}
+
+.close-btn {
+  background-color: #7f8c8d;
+}
+
+.close-btn:hover {
+  background-color: #95a5a6;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+
+@media (max-width: 768px) {
+  .calendar{
+    width: 100%;
+  }
+  .calendar-container{
+    border-radius: 0px !important;
+  }
+  .day, .date , .month{
+    width: 100% !important;
+    text-align: center !important;
+    align-content: center !important;
+    height: calc(100%/3) !important;
+  }
+  .today-date{
+    width: 60% !important;
+  }
+  .empty{
+    width: 7.5%;
+  }
+  .agenda-body{
+    width: 92.5%;
+  }
+  .hour-container{
+    width: 7.5%;
+  }
+  .row-hour-text{
+    font-size: 3vw;
+  }
 }

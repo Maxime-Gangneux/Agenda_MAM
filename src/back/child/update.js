@@ -17,7 +17,6 @@ async function updateChild(id, infos) {
         .eq('id', id);
 
     if (error) console.error('Erreur:', error);
-    else console.log('Mise à jour réussie:', data);
 }
 
 export default updateChild;

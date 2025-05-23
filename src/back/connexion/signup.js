@@ -28,7 +28,7 @@ async function signup(email, firstName, lastName, password) {
                     first_name: firstName,
                     last_name: lastName,
                     role: 'parent',
-                    is_verified: false,
+                    is_verified: true,
                 }
             ]);
 

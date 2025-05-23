@@ -11,7 +11,7 @@
 .parent-list-title {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 10%;
     width: 100%;
@@ -63,13 +63,13 @@ table, th, td {
 
 .table-actions{
     position: relative;
-    justify-content: start;
+    justify-content: center;
     display: flex;
     align-items: center;
     height: 100%;
 }
 
-.table-action-edit-btn, .table-action-delete-btn{
+.table-action-edit-btn, .table-action-delete-btn, .table-action-check-btn{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,10 +82,6 @@ table, th, td {
 }
 
 .add-button{
-    position: absolute;
-    right: 5%;
-    top: 60%;
-    transform: translateY(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,13 +92,9 @@ table, th, td {
 }
 
 .back-to-calendar{
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 60%;
-    left: 5%;
-    transform: translateY(-50%);
     height: 70%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
@@ -115,4 +107,30 @@ table, th, td {
 .table-action-delete-btn:hover{background-color: rgb(255, 32, 32);}
 .table-action-edit-btn{background-color: rgb(255, 179, 79);}
 .table-action-edit-btn:hover{background-color: rgb(255, 145, 0)}
+.table-action-check-btn{background-color: rgb(80, 191, 255);}
+.table-action-check-btn:hover{background-color: rgb(62, 147, 197);}
 
+@media (max-width: 768px) {
+    .parent-display-container{
+        width: 95% !important;
+        height: 100vh !important;
+    }
+    .back-to-calendar{
+        height: 10vw !important;
+        width: 10vw !important;
+    }
+    .add-button{
+        height: 10vw !important;
+        width: 10vw !important;
+    }
+    .table-action-delete-btn, .table-action-edit-btn{
+        height: 7vw !important;
+        width: 7vw !important;
+    }
+    .table-header > th{
+        font-size: 3vw;
+    }
+    .table-row > td{
+        font-size: 3vw;
+    }
+}

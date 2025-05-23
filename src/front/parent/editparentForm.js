@@ -44,6 +44,12 @@ const EditParentForm = ({ ParentId, setmodalupdateParentisopen }) => {
 
     return (
         <div className="edit-parent-form-container">
+            <button
+            className="close-button"
+            onClick={() => setmodalupdateParentisopen(false)}
+            >
+            ×
+            </button>
             <h2 className="edit-form-title">Modifier un parent</h2>
             <form className="edit-form" onSubmit={handleSubmit}>
                 <div className="edit-form-group">

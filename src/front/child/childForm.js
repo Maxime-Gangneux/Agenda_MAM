@@ -28,6 +28,12 @@ const ChildForm = ({setmodalcreateChildisopen, user}) => {
 
     return (
         <div className="child-form-container">
+            <button
+            className="close-button"
+            onClick={() => setmodalcreateChildisopen(false)}
+            >
+            ×
+            </button>
             <h2 className="form-title">Ajouter un enfant</h2>
             <form className="form" onSubmit={handleSubmit}>
                 <div className="form-group">

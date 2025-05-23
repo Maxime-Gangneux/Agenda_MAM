@@ -7,7 +7,6 @@ async function deleteHoraire(id) {
         .eq("id", id);
 
     if (error) console.error('Erreur:', error);
-    else console.log('supression réussite:');
 }
 
 export default deleteHoraire;

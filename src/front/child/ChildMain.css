@@ -28,3 +28,11 @@
     background-color: rgba(0, 0, 0, 0.356);
     z-index: 2;
 }
+
+@media (max-width: 768px) {
+    .child-main{
+        width: 100% !important;
+        height: 100vh !important;
+        padding: 0 !important;
+    }
+}

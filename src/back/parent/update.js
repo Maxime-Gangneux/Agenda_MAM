@@ -5,7 +5,6 @@ async function updateParent(id, infos) {
         console.error("Erreur : Aucun ID spécifié pour la mise à jour.");
         return;
     }
-    console.log("Infos reçues pour update :", infos);
 
     const { data, error } = await supabase
         .from('users')
@@ -19,7 +18,6 @@ async function updateParent(id, infos) {
         .select()
 
     if (error) console.error('Erreur:', error);
-    else console.log('Mise à jour réussie:', data);
 }
 
 export default updateParent;

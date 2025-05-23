@@ -4,17 +4,14 @@ import { fr } from "date-fns/locale";
 import getByWeek from "../../../back/calendar/getbyweek.js";
 import getChild from "../../../back/child/get.js"; 
 import AbonnementHoraires from "../../../back/utils/abonnements/abonement_horaires.js";
-import AbonnementEnfants from "../../../back/utils/abonnements/abonement_enfant.js";
 import Topbar from "./topbar/topbar.js";
 import CalendarBody from "./calendarBody.js";
 import "./calendar.css";
 
-const Calendar = ({ checkboxState, setCheckboxState, checkToken }) => {
+const Calendar = ({ checkboxState, setCheckboxState, checkToken, currentWeekStart, setCurrentWeekStart, user, children, setChildren, changetoolbarrisopen}) => {
   const [selectedDateTime, setSelectedDateTime] = useState(null);
-  const [currentWeekStart, setCurrentWeekStart] = useState(startOfWeek(new Date(), { weekStartsOn: 1 }));
-  const currentWeekEnd = addDays(currentWeekStart, 6);
+  const currentWeekEnd = addDays(currentWeekStart, 7);
   const [horaires, setHoraires] = useState([]);
-  const [children, setChildren] = useState([]);
   const [agendaHeight, setAgendaHeight] = useState(0);
   const agendaRef = useRef(null);
   const [excludedChildren, setExcludedChildren] = useState([]);
@@ -32,24 +29,6 @@ const Calendar = ({ checkboxState, setCheckboxState, checkToken }) => {
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
-  const fetchHoraires = async () => {
-    const data = await getByWeek(currentWeekStart, currentWeekEnd);
-    setHoraires(data || []);
-  };
-
-  useEffect(() => {
-    fetchHoraires();
-  }, [currentWeekStart]);
-
-  const fetchChildren = async () => {
-    const data = await getChild();
-    setChildren(data || []);
-  };
-
-  useEffect(() => {
-    fetchChildren();
-  }, []);
-
   const handleToday = () => {
     setCurrentWeekStart(startOfWeek(new Date(), { weekStartsOn: 1 }));
   };
@@ -64,14 +43,14 @@ const Calendar = ({ checkboxState, setCheckboxState, checkToken }) => {
 
   return (
     <div className="calendar">
-      <Topbar handleToday={handleToday} handleNextWeek={handleNextWeek} handlePrevWeek={handlePrevWeek} checkToken={checkToken} />
+      <Topbar changetoolbarrisopen = {changetoolbarrisopen} handleToday={handleToday} handleNextWeek={handleNextWeek} handlePrevWeek={handlePrevWeek} checkToken={checkToken} />
       <CalendarBody
+        user = {user}
         checkboxState={checkboxState}
         setCheckboxState={setCheckboxState}
         currentWeekStart={currentWeekStart}
         currentWeekEnd={currentWeekEnd}
         children={children}
-        fetchChildren={fetchChildren}
         handleCheckboxChange={setCheckboxState}
       />
     </div>

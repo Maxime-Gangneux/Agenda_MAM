@@ -56,3 +56,16 @@
 .edit-form-button:hover {
     background-color: #45a049;
 }
+
+@media (max-width: 768px) {
+    .edit-parent-form-container{
+        width: 100%;
+        height: auto;
+        padding: 5% 0;
+    }
+    .form input,
+    .form textarea,
+    .form select {
+    font-size: 16px !important;
+    }
+  }

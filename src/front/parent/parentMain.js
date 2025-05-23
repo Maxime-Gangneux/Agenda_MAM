@@ -9,12 +9,12 @@ const ParentMain = ({ changePages }) => {
     const [ParentId, setParentId] = useState(null);
 
     return (
-        <div className="child-background">
-            <div className="child-main">
+        <div className="parent-background">
+            <div className="parent-main">
                 {modalupdateParentisopen && (
-                    <div className="child-form" >
+                    <div className="parent-form" >
                         <EditParentForm ParentId={ParentId} setmodalupdateParentisopen = {setmodalupdateParentisopen} />
-                        <div className="child-form-background" onClick={() => {setmodalupdateParentisopen(false)}}></div>
+                        <div className="parent-form-background" onClick={() => {setmodalupdateParentisopen(false)}}></div>
                     </div>
                 )}
                 <DisplayParent setmodalcreateParentisopen={setmodalcreateParentisopen} setmodalupdateParentisopen = {setmodalupdateParentisopen} setParentId = {setParentId}/>

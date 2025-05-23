@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import getParents from '../../back/parent/get.js';
 import deleteParent from '../../back/parent/delete.js';
+import verifyUser from "../../back/parent/check.js"
 import edit from '../../assets/edit.svg';
 import delete_button from '../../assets/delete.svg';
 import fleche_gauche from "../../assets/keyboard_arrow_left_white.svg";
+import check from "../../assets/check.svg";
 import AbonnementParents from "../../back/utils/abonnements/abonement_parents.js"
 import "./displayParent.css";
 
@@ -13,6 +15,8 @@ const DisplayParent = ({setmodalupdateParentisopen, setParentId }) => {
     const fetchParents = async () => {
         const data = await getParents();
         setParents(data);
+        console.log(data);
+        
     };
 
     useEffect(() => {
@@ -20,8 +24,10 @@ const DisplayParent = ({setmodalupdateParentisopen, setParentId }) => {
     }, []);
 
     const handleDelete = async (id) => {
-        await deleteParent(id);
-        fetchParents();
+        if (window.confirm("Es-tu sûr de vouloir le surpimer ?")) {
+            await deleteParent(id);
+            fetchParents();
+        }
     };
 
     return (
@@ -31,6 +37,9 @@ const DisplayParent = ({setmodalupdateParentisopen, setParentId }) => {
                     <img src={fleche_gauche} alt="Retour" />
                 </button>
                 <h2>Liste des Parents</h2>
+                <button style={{opacity:"0"}}className="back-to-calendar" onClick={() => { window.location.hash = "calendar"; }}>
+                    <img src={fleche_gauche} alt="Retour" />
+                </button>
             </div>
 
             <div className="parent-table-container">
@@ -54,6 +63,10 @@ const DisplayParent = ({setmodalupdateParentisopen, setParentId }) => {
                                     <td>{parent.telephone}</td>
                                     <td>
                                         <div className="table-actions">
+                                            {!parent.is_verified? 
+                                            <button className='table-action-check-btn' onClick={() => verifyUser(parent.id)}>
+                                                <img src={check} alt="verifier" />
+                                            </button> : <></>}
                                             <button className="table-action-edit-btn" 
                                                 onClick={async () => {
                                                     await setParentId(parent.id);

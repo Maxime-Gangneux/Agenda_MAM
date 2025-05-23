@@ -1,7 +1,6 @@
 import supabase from '../utils/connexion.js';
 
 async function getChildById(id) {
-    console.log("ID reçu :", id);
 
     const { data, error } = await supabase
         .from('enfants')
